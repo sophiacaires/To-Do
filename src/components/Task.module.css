@@ -1,4 +1,4 @@
-.task {
+.todoTask {
   margin-top: 1.5rem;
   display: flex;
   padding: 1.5rem;
@@ -9,6 +9,20 @@
   align-items: flex-start;
   gap: 2.25rem;
   align-self: stretch;
+}
+
+.doneTask{
+  margin-top: 1.5rem;
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.04);
+  background: var(--zinc-900);
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.25rem;
+  align-self: stretch;
+  opacity: 0.5;
 }
 
 .textColumn {
@@ -24,8 +38,9 @@
   text-align: justify;
 }
 
-.textColumn time {
+time {
   color: var(--zinc-400);
+  font-size: 0.9rem;
 }
 
 .btnRow {
@@ -49,6 +64,10 @@
   align-items: flex-end;
   gap: 0.75rem;
   flex-direction: column;
+}
+
+.doneTaskCheckBtn{
+  display: none;
 }
 
 .checkBtn {
