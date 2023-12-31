@@ -1,0 +1,14 @@
+.header{
+    background: var(--zinc-900);
+    display: flex;
+    padding: 12px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.header img{
+    width: 3rem;
+    height: 3rem;
+}

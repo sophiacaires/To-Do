@@ -1,0 +1,65 @@
+:root {
+  --white: #ffffff;
+  --zinc-100: #f4f4f5; /* text */
+  --zinc-200: #e4e4e7;
+  --zinc-300: #d4d4d4;
+  --zinc-400: #a1a1aa; /* obs text */
+  --zinc-500: #71717a;
+  --zinc-600: #52525b;
+  --zinc-700: #3f3f46;
+  --zinc-800: #27272a;
+  --zinc-900: #18181b; /* secondary background */
+  --zinc-950: #0e0e11; /* background */
+
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6; /* new task button */
+  --blue-600: #2563eb;
+  --blue-900: #1e3a8a;
+  --blue-990: #111725; /* new task button */
+
+  --lime-400: #a3e635;
+  --lime-500: #84cc16; /* mark as complete button */
+  --lime-990: #1a2e05; /* bg complete button */
+
+  --red-600: #dc2626; /* delete button */
+  --red-990: #2d0606; /* bg delete button */
+}
+
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 1px var(--zinc-200);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+body {
+  background-color: var(--zinc-950);
+  color: var(--zinc-100);
+  -webkit-font-smoothing: antialiased;
+}
+
+main{
+  max-width: 70rem;
+  min-width: 30rem;
+  width: 80%;
+}
+
+button, input {
+  border: transparent;
+}
+
+.cond-bold-upper {
+  font-family: "Roboto-Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
