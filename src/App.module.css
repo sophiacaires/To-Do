@@ -1,14 +1,103 @@
-.sectionTitle {
-  padding: 1rem;
-  margin: 1rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 2px solid var(--zinc-800);
-}
-
 @media (max-width: 768px) {
   html {
     font-size: 87.5%;
   }
+}
+
+.tabButtons {
+  display: flex;
+  padding: 0.75rem;
+  overflow: hidden;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoBtn,
+.doneBtn,
+.inactiveTodoBtn,
+.inactiveDoneBtn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  width: 50%;
+  font-size: 1.2rem;
+  padding: 1rem;
+  font-weight: bold;
+  color: var(--zinc-100);
+  background: var(--zinc-900);
+}
+
+.todoBtn:focus,
+.doneBtn:focus {
+  box-shadow: none;
+}
+
+.todoBtn {
+  background: var(--blue-700);
+  border-radius: 12px 0 0 0;
+}
+
+.todoBtn:hover {
+  background: var(--blue-600);
+}
+
+.doneBtn {
+  background: var(--lime-700);
+  border-radius: 0 12px 0 0;
+}
+
+.doneBtn:hover {
+  background: var(--lime-600);
+}
+
+.inactiveTodoBtn {
+  border-radius: 12px 0 0 0;
+}
+
+.inactiveDoneBtn {
+  border-radius: 0 12px 0 0;
+}
+
+.tabContentTodo,
+.tabContentDone {
+  padding: 1.5rem;
+  border-radius: 0 0 12px 12px;
+}
+
+.tabContentTodo {
+  background: var(--blue-700);
+}
+
+.tabContentDone {
+  background: var(--lime-700);
+}
+
+.noTodoTasks,
+.noTasksDone {
+  display: flex;
+  min-width: 25rem;
+  max-width: 70rem;
+  min-height: 24rem;
+  padding: 3rem;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--zinc-950-05);
+}
+
+.noTodoTasks p,
+.noTasksDone p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--zinc-50);
+}
+
+.noTodoTasks span,
+.noTasksDone span {
+  font-size: 1.2rem;
+  color: var(--zinc-300);
 }

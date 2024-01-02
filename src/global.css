@@ -1,9 +1,10 @@
 :root {
   --white: #ffffff;
-  --zinc-100: #f4f4f5; /* text */
+  --zinc-50: #fafafa; /* text */
+  --zinc-100: #f4f4f5;
   --zinc-200: #e4e4e7;
-  --zinc-300: #d4d4d4;
-  --zinc-400: #a1a1aa; /* obs text */
+  --zinc-300: #d4d4d4; /* obs text */
+  --zinc-400: #a1a1aa;
   --zinc-500: #71717a;
   --zinc-600: #52525b;
   --zinc-700: #3f3f46;
@@ -11,17 +12,27 @@
   --zinc-900: #18181b; /* secondary background */
   --zinc-950: #0e0e11; /* background */
   --zinc-980: #070708;
+  --zinc-950-05: rgba(14, 14, 17, 0.8);
 
   --blue-300: #93c5fd;
   --blue-400: #60a5fa;
   --blue-500: #3b82f6; /* new task button */
   --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
   --blue-900: #1e3a8a;
+  --blue-950: #172554;
   --blue-990: #111725; /* new task button */
+  --blue-950-02: #17255433;
+  --blue-950-04: #17255466;
 
   --lime-400: #a3e635;
   --lime-500: #84cc16; /* mark as complete button */
-  --lime-990: #1a2e05; /* bg complete button */
+  --lime-600: #65a30d;
+  --lime-700: #4d7c0f;
+  --lime-950: #1a2e05; /* bg complete button */
+  --lime-950-02: #1a2e0533;
+  --lime-950-04: #1a2e0566;
 
   --red-600: #dc2626; /* delete button */
   --red-990: #2d0606; /* bg delete button */

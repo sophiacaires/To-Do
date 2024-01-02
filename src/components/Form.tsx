@@ -5,38 +5,37 @@ import styles from "./Form.module.css";
 import { Task } from "../App";
 
 interface FormProps {
-  taskList: Task[];
-  setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+  taskList: Task[]
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>
 }
 
 export function Form({ taskList, setTasks }: FormProps) {
-  const [newTaskContent, setNewTaskContent] = useState("");
+  const [newTaskContent, setNewTaskContent] = useState("")
 
   function handleNewTask(event: FormEvent) {
-    event.preventDefault();
+    event.preventDefault()
 
     const newTask = {
       content: newTaskContent,
       createdAt: new Date(),
-      status: "todo",
-    };
+      status: "todo"
+    }
 
-    setTasks([...taskList, newTask]);
-    setNewTaskContent("");
+    setTasks([...taskList, newTask])
+    setNewTaskContent("")
   }
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
-    event.target.setCustomValidity("");
-    setNewTaskContent(event.target.value);
+    event.target.setCustomValidity("")
+    setNewTaskContent(event.target.value)
   }
 
   function handleNewTaskInvalid(event: InvalidEvent<HTMLInputElement>) {
-    event.target.setCustomValidity("Esse campo é obrigatório");
+    event.target.setCustomValidity("Esse campo é obrigatório")
   }
 
   const isNewTaskEmpty = newTaskContent.length == 0;
-  const withoutTasks = taskList.length == 0;
-
+  
   return (
     <>
       <form className={styles.taskForm} onSubmit={handleNewTask}>
@@ -52,15 +51,9 @@ export function Form({ taskList, setTasks }: FormProps) {
           className={styles.addBtn}
           disabled={isNewTaskEmpty}
         >
-          <PlusCircle size={26} alt="add icon" />
+          <PlusCircle size={30} alt="Add task" />
         </button>
       </form>
-      {withoutTasks && (
-        <div className={styles.withoutTasks}>
-          <p>No tasks found</p>
-          <span>Start now! 😄</span>
-        </div>
-      )}
     </>
   );
 }

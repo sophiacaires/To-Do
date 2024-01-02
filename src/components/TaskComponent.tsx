@@ -8,12 +8,16 @@ import { useState } from "react";
 import styles from "./TaskComponent.module.css";
 
 interface TaskComponentProps {
-  task: Task
-  taskList: Task[]
-  setTasks: React.Dispatch<React.SetStateAction<Task[]>>
+  task: Task;
+  taskList: Task[];
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
 }
 
-export function TaskComponent({ task, taskList, setTasks }: TaskComponentProps) {
+export function TaskComponent({
+  task,
+  taskList,
+  setTasks,
+}: TaskComponentProps) {
   setDefaultOptions({ locale: enUS });
   const createdDateFormatted = format(task.createdAt, "MMM dd 'at' hh:mm aa");
   const createdDateRelativeToNow = formatDistanceToNow(task.createdAt, {
@@ -22,25 +26,33 @@ export function TaskComponent({ task, taskList, setTasks }: TaskComponentProps) 
 
   const [lines] = useState(task.content.length);
 
-  function handleSetStatusDone(taskStatusToSetDone: string) {
-    const newToDoTaskList = taskList.filter((task)=>{
-      return task.status != taskStatusToSetDone
+  function handleSetStatusDone(taskToSetDone: string) {
+    const updatedTaskList = taskList.map((task) => {
+      if (task.content === taskToSetDone) {
+        return { ...task, status: 'done' }
+      }
+      return task
     })
-    setTasks(newToDoTaskList)
+  
+    setTasks(updatedTaskList)
   }
+  
 
   function handleDeleteTask(taskContentToDelete: string) {
-    const tasksWithoutDeletedOne = taskList.filter((task)=>{
+    const tasksWithoutDeletedOne = taskList.filter((task) => {
       return task.content != taskContentToDelete
     })
     setTasks(tasksWithoutDeletedOne)
   }
 
   return (
-    <div className={status == "todo" ? styles.todoTask : styles.doneTask}>
+    <div className={task.status == "todo" ? styles.todoTask : styles.doneTask}>
       <div className={styles.textColumn}>
         <p>{task.content}</p>
-        <time title={createdDateFormatted} dateTime={task.createdAt.toISOString()}>
+        <time
+          title={createdDateFormatted}
+          dateTime={task.createdAt.toISOString()}
+        >
           Created {createdDateRelativeToNow}
         </time>
       </div>
@@ -48,18 +60,19 @@ export function TaskComponent({ task, taskList, setTasks }: TaskComponentProps) 
       <div className={lines > 300 ? styles.btnColumn : styles.btnRow}>
         <button
           className={
-            status == "todo" ? styles.checkBtn : styles.doneTaskCheckBtn
+            task.status == "todo" ? styles.checkBtn : styles.doneTaskCheckBtn
           }
-          onClick={()=>handleSetStatusDone(task.status)}
+          onClick={() => handleSetStatusDone(task.content)}
         >
-          <Check size={26} weight="bold" alt="mark as done icon" />
+          <Check size={26} weight="bold" alt="Mark as done" />
         </button>
-        <button 
-          className={styles.deleteBtn} 
-          onClick={()=>handleDeleteTask(task.content)}>
-          <Trash size={26} alt="delete icon" />
+        <button
+          className={styles.deleteBtn}
+          onClick={() => handleDeleteTask(task.content)}
+        >
+          <Trash size={26} alt="Delete task" />
         </button>
       </div>
     </div>
-  );
+  )
 }

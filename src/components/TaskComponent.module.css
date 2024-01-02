@@ -1,33 +1,15 @@
-.todoTask {
+.todoTask, .doneTask {
   display: flex;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.04);
-  background: var(--zinc-900);
+  background: var(--zinc-950-05);
   justify-content: center;
   align-items: flex-start;
   gap: 2.25rem;
-  align-self: stretch;
 }
 
-.todoTask + .todoTask {
-  margin-top: 1.5rem;
-}
-
-.doneTask{
-  display: flex;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.04);
-  background: var(--zinc-900);
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2.25rem;
-  align-self: stretch;
-  opacity: 0.5;
-}
-
-.doneTask + .doneTask {
+.todoTask + .todoTask, .doneTask + .doneTask {
   margin-top: 1.5rem;
 }
 
@@ -41,15 +23,16 @@
 }
 
 .textColumn p {
+  color: var(--zinc-50);
   text-align: justify;
 }
 
 time {
-  color: var(--zinc-400);
+  color: var(--zinc-300);
   font-size: 0.9rem;
 }
 
-.btnRow {
+.btnRow, .btnColumn {
   display: flex;
   min-width: 3.125rem;
   max-width: 7rem;
@@ -61,14 +44,6 @@ time {
 }
 
 .btnColumn {
-  display: flex;
-  min-width: 3.125rem;
-  max-width: 7rem;
-  min-height: 3.125rem;
-  max-height: 7rem;
-  justify-content: flex-end;
-  align-items: flex-end;
-  gap: 0.75rem;
   flex-direction: column;
 }
 
@@ -76,19 +51,23 @@ time {
   display: none;
 }
 
-.checkBtn {
+.checkBtn, .deleteBtn {
   display: flex;
-  overflow: hidden;
   padding: 0.75rem;
+  overflow: hidden;
   border-radius: 12px;
   align-items: center;
-  background: var(--lime-990);
+  justify-content: center;
+}
+
+.checkBtn {
+  background: var(--lime-950);
   color: var(--lime-500);
 }
 
 .checkBtn:hover {
   background: var(--lime-500);
-  color: var(--lime-990);
+  color: var(--lime-950);
 }
 
 .checkBtn:focus {
@@ -96,12 +75,6 @@ time {
 }
 
 .deleteBtn {
-  display: flex;
-  padding: 0.75rem;
-  overflow: hidden;
-  border-radius: 12px;
-  align-items: center;
-  justify-content: center;
   background: var(--red-990);
   color: var(--red-600);
 }
